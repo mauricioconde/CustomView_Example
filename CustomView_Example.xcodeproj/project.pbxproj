@@ -12,6 +12,7 @@
 		F37644421D22FFD40094EC59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F37644401D22FFD40094EC59 /* Main.storyboard */; };
 		F37644441D22FFD40094EC59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F37644431D22FFD40094EC59 /* Assets.xcassets */; };
 		F37644471D22FFD40094EC59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F37644451D22FFD40094EC59 /* LaunchScreen.storyboard */; };
+		F376444F1D23063A0094EC59 /* CustomHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = F376444E1D23063A0094EC59 /* CustomHeader.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		F37644431D22FFD40094EC59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F37644461D22FFD40094EC59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F37644481D22FFD40094EC59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F376444E1D23063A0094EC59 /* CustomHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomHeader.xib; path = CustomView_Example/XIB/CustomHeader.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +40,7 @@
 		F37644301D22FFD40094EC59 = {
 			isa = PBXGroup;
 			children = (
+				F376444E1D23063A0094EC59 /* CustomHeader.xib */,
 				F376443B1D22FFD40094EC59 /* CustomView_Example */,
 				F376443A1D22FFD40094EC59 /* Products */,
 			);
@@ -123,6 +126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F37644471D22FFD40094EC59 /* LaunchScreen.storyboard in Resources */,
+				F376444F1D23063A0094EC59 /* CustomHeader.xib in Resources */,
 				F37644441D22FFD40094EC59 /* Assets.xcassets in Resources */,
 				F37644421D22FFD40094EC59 /* Main.storyboard in Resources */,
 			);
@@ -288,6 +292,7 @@
 				F376444D1D22FFD40094EC59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
