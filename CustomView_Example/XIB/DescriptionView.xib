@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DescriptionView" customModule="CustomView_Example" customModuleProvider="target">
             <connections>
                 <outlet property="barLbl" destination="Qjb-yK-WFk" id="iAU-6c-mWj"/>
+                <outlet property="container" destination="iN0-l3-epB" id="C10-NS-sIo"/>
                 <outlet property="descLbl" destination="D5S-8E-wuO" id="Whx-OA-zNE"/>
                 <outlet property="imageView" destination="9wW-cC-DEh" id="awH-gF-zw8"/>
                 <outlet property="subtitleLbl" destination="ycw-rI-Fr8" id="P6q-Ef-9dd"/>
