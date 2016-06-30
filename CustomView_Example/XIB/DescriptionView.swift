@@ -8,7 +8,8 @@
 
 import UIKit
 
-class DescriptionView: UIView {
+@IBDesignable class DescriptionView: UIView {
+    let nibName = "DescriptionView"
     @IBOutlet var container: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLbl: UILabel!
@@ -16,31 +17,78 @@ class DescriptionView: UIView {
     @IBOutlet weak var descLbl: UILabel!
     @IBOutlet weak var barLbl: UILabel!
     
+    @IBInspectable var icon: UIImage!{
+        didSet{imageView.image = icon}
+    }
+    
+    @IBInspectable var viewTitle: String = "The title" {
+        didSet{titleLbl.text = viewTitle}
+    }
+    
+    @IBInspectable var viewSubtitle: String = "Subtitle" {
+        didSet{ subtitleLbl.text = viewSubtitle}
+    }
+    
+    @IBInspectable var viewDesc: String = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa" {
+        didSet{descLbl.text = viewDesc}
+    }
+    
+    @IBInspectable var barColor: UIColor = UIColor.blueColor() {
+        didSet{barLbl.backgroundColor = barColor}
+    }
+    
+    @IBInspectable var borderColor: UIColor = UIColor.clearColor() {
+        didSet {
+            container.layer.borderColor = borderColor.CGColor
+        }
+    }
+    
+    @IBInspectable var borderWidth: CGFloat = 0 {
+        didSet {
+            container.layer.borderWidth = borderWidth
+        }
+    }
+    @IBInspectable var cornerRadius: CGFloat = 0 {
+        didSet {
+            container.layer.cornerRadius = cornerRadius
+        }
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        initSubviews()
+        setUp()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setUp()
     }
     
     func initSubviews() {
-        // standard initialization logic
-        let nib = UINib(nibName: "DescriptionView", bundle: nil)
+        //loadViewFromNib
+        let bundle = NSBundle(forClass: self.dynamicType)
+        let nib = UINib(nibName: nibName, bundle: bundle)
+        let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        
+        // use bounds not frame or it'll be offset
+        view.frame = bounds
+        
+        // Make the view stretch with containing view
+        view.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
+        
+        // Adding custom subview on top of our view (over any custom drawing )
+        addSubview(view)
+    }
+
+    func setUp() {
+        //standard initialization logic
+        let bundle = NSBundle(forClass: self.dynamicType)
+        let nib = UINib(nibName: nibName, bundle: bundle)
         nib.instantiateWithOwner(self, options: nil)
+        // use bounds not frame or it'll be offset
         container.frame = bounds
+        // Adding custom subview on top of our view (over any custom drawing)
         addSubview(container)
-            
-            // custom initialization logic
+        
     }
-
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
-
 }
